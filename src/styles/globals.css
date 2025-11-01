@@ -6,11 +6,6 @@
   color-scheme: dark;
 }
 
-html,
-body {
-  @apply bg-background text-foreground antialiased;
-}
-
 /* Headings split-lines style reminiscent of marcetjardin.com */
 .split-lines {
   line-height: 0.95;

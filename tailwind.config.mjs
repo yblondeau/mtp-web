@@ -9,8 +9,8 @@ export default {
         foreground: "#f2f2ee",
         muted: "#c9c7bf",
         accent: {
-          DEFAULT: "#a6ce39", // vert chantier/TP
-          dark: "#7fa12c",
+          DEFAULT: "#f3b21f",
+          dark: "#f3b21f",
         },
       },
       container: {
