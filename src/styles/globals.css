@@ -41,3 +41,41 @@ a.btn {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% calc(100% - 4vw));
 }
 
+/* Services : layout & diagonals */
+.service-row {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  --slope: 2vw;
+}
+
+.service-shell,
+.service-inner {
+  background: inherit;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.diag-bottom-a { clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--slope)), 0% 100%); }
+.diag-bottom-b { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% calc(100% - var(--slope))); }
+.diag-top-a { clip-path: polygon(0 var(--slope), 100% 0, 100% 100%, 0% 100%); }
+.diag-top-b { clip-path: polygon(0 0, 100% var(--slope), 100% 100%, 0% 100%); }
+.img-diag-bottom-a { clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--slope)), 0% 100%); }
+.img-diag-bottom-b { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% calc(100% - var(--slope))); }
+.service-row { margin: 0; padding: 0; }
+.service-row + .service-row { margin-top: calc(var(--slope) * -1); }
+
+.service-card {
+  @apply rounded-2xl md:rounded-3xl bg-white/75 backdrop-blur px-6 py-6 md:px-10 md:py-10 text-background shadow-lg;
+}
+
+.service-icon {
+  width: clamp(26px, 2.5vw, 34px);
+  height: clamp(26px, 2.5vw, 34px);
+  stroke: #f3b21f;
+  fill: none;
+  stroke-width: 1.8;
+}
+
+.service-alt-0 { background: transparent; }
+.service-alt-1 { background: transparent; }
