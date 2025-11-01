@@ -1,0 +1,42 @@
+---
+import { SITE } from "../lib/constants";
+---
+
+<section id="about" class="py-20 md:py-28 border-t border-white/10">
+  <div class="container grid lg:grid-cols-2 gap-10 items-center">
+    <div data-reveal>
+      <h2 class="text-3xl md:text-5xl font-bold split-lines">L’entreprise</h2>
+      <p class="mt-4 text-muted">
+        Marmier TP est une entreprise unipersonnelle de travaux publics. Nous
+        intervenons pour les particuliers, professionnels et collectivités sur
+        vos projets d’aménagement, de réseaux et de terrassement.
+      </p>
+      <ul class="mt-6 grid sm:grid-cols-2 gap-3 text-sm">
+        <li class="p-4 rounded-xl bg-white/5 border border-white/10">
+          Conseil & accompagnement
+        </li>
+        <li class="p-4 rounded-xl bg-white/5 border border-white/10">
+          Sécurité & conformité
+        </li>
+        <li class="p-4 rounded-xl bg-white/5 border border-white/10">
+          Respect des délais
+        </li>
+        <li class="p-4 rounded-xl bg-white/5 border border-white/10">
+          Devis détaillé
+        </li>
+      </ul>
+    </div>
+    <div class="relative" data-reveal>
+      <div
+        class="aspect-[4/3] rounded-3xl overflow-hidden border border-white/10"
+      >
+        <img
+          src={`${SITE.base}/images/chantier-2.jpg`}
+          alt="Chantier"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>

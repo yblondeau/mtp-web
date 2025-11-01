@@ -1,0 +1,42 @@
+---
+import { SITE } from "../lib/constants";
+---
+
+<section id="galerie" class="py-20 md:py-28">
+  <div class="container">
+    <header>
+      <h2 class="text-3xl md:text-5xl font-bold split-lines" data-reveal>
+        Réalisations
+      </h2>
+      <p class="mt-4 text-muted" data-reveal>
+        Quelques chantiers en images. Photos provisoires.
+      </p>
+    </header>
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3" data-reveal>
+      <img
+        src={`${SITE.base}/images/chantier-1.jpg`}
+        alt=""
+        class="rounded-xl border border-white/10"
+        loading="lazy"
+      />
+      <img
+        src={`${SITE.base}/images/chantier-2.jpg`}
+        alt=""
+        class="rounded-xl border border-white/10"
+        loading="lazy"
+      />
+      <img
+        src={`${SITE.base}/images/chantier-3.jpg`}
+        alt=""
+        class="rounded-xl border border-white/10"
+        loading="lazy"
+      />
+      <img
+        src={`${SITE.base}/images/chantier-4.jpg`}
+        alt=""
+        class="rounded-xl border border-white/10"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>

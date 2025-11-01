@@ -1,0 +1,36 @@
+---
+import { SITE } from "../lib/constants";
+---
+
+<section class="relative isolate pt-24 md:pt-32 overflow-hidden">
+  {
+    /* `isolate` crée un contexte d'empilement pour que le -z-10 ne passe pas derrière le body */
+  }
+  <div class="absolute inset-0 -z-10 parallax" data-parallax data-speed="0.18">
+    <img
+      src={`${SITE.base}images/hero.jpg`}
+      alt="Chantier TP"
+      class="w-full h-full object-cover opacity-70"
+    />
+  </div>
+  <div
+    class="container min-h-[70vh] grid md:grid-cols-2 gap-8 items-center relative z-10"
+  >
+    <div>
+      <h1 class="split-lines text-5xl md:text-7xl font-extrabold" data-reveal>
+        Marmier TP<br /> Travaux publics
+      </h1>
+      <p class="mt-6 max-w-xl text-lg text-muted" data-reveal>
+        Aménagements extérieurs • Assainissement • Terrassement • Démolition &
+        recyclage
+      </p>
+      <div class="mt-8 flex gap-4" data-reveal>
+        <a class="btn" href={`${SITE.base}contact`}>Demander un devis</a>
+        <a class="btn border-foreground/30" href={`${SITE.base}#services`}
+          >Nos activités</a
+        >
+      </div>
+    </div>
+    <div class="hidden md:block"></div>
+  </div>
+</section>

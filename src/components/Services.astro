@@ -1,0 +1,27 @@
+---
+import ActivityCard from "./ActivityCard.astro";
+import { ACTIVITIES } from "../lib/constants";
+---
+
+<section id="services" class="py-20 md:py-28">
+  <div class="container">
+    <header class="max-w-2xl">
+      <h2 class="text-3xl md:text-5xl font-bold split-lines" data-reveal>
+        Nos activités principales
+      </h2>
+      <p class="mt-4 text-muted" data-reveal>
+        Interventions soignées et sécurisées, du devis à la réception de
+        chantier.
+      </p>
+    </header>
+    <div class="mt-10 grid md:grid-cols-2 gap-6 lg:gap-8">
+      {
+        ACTIVITIES.map((a) => (
+          <div data-reveal>
+            <ActivityCard title={a.title} desc={a.desc} img={a.img} />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

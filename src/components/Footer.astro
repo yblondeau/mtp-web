@@ -1,0 +1,24 @@
+---
+import { SITE } from "../lib/constants";
+---
+
+<footer class="py-10 border-t border-white/10 mt-10">
+  <div
+    class="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted"
+  >
+    <div class="flex items-center gap-3">
+      <img
+        src={`${SITE.base}logo-marmiertp.svg`}
+        alt="Marmier TP"
+        class="h-6"
+      />
+      <span
+        >© {new Date().getFullYear()} Marmier TP — Tous droits réservés</span
+      >
+    </div>
+    <nav class="flex items-center gap-4">
+      <a href="#">Mentions légales</a>
+      <a href="#">Politique de confidentialité</a>
+    </nav>
+  </div>
+</footer>

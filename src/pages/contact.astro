@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+---
+
+<BaseLayout title="Contact — Marmier TP">
+  <Header />
+  <main class="pt-28 pb-20">
+    <div class="container max-w-2xl">
+      <h1 class="text-4xl md:text-5xl font-bold split-lines">Contact</h1>
+      <p class="mt-4 text-muted">Dites-nous en plus sur votre projet.</p>
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        class="mt-8 grid gap-4"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <input
+          class="px-4 py-3 rounded-xl bg-white/5 border border-white/10"
+          name="nom"
+          placeholder="Nom"
+          required
+        />
+        <input
+          class="px-4 py-3 rounded-xl bg-white/5 border border-white/10"
+          name="email"
+          type="email"
+          placeholder="Email"
+          required
+        />
+        <input
+          class="px-4 py-3 rounded-xl bg-white/5 border border-white/10"
+          name="telephone"
+          type="tel"
+          placeholder="Téléphone"
+        />
+        <textarea
+          class="px-4 py-3 rounded-xl bg-white/5 border border-white/10"
+          name="message"
+          rows="6"
+          placeholder="Votre message"
+          required></textarea>
+        <button class="btn justify-center">Envoyer</button>
+      </form>
+      <p class="text-xs text-muted mt-4">
+        En envoyant ce formulaire, vous acceptez notre politique de
+        confidentialité.
+      </p>
+    </div>
+  </main>
+</BaseLayout>

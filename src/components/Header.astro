@@ -1,0 +1,70 @@
+---
+import { SITE } from "../lib/constants";
+---
+
+<header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-colors">
+  <div class="container flex items-center justify-between py-4">
+    <a href={SITE.base} class="flex items-center gap-3">
+      <img
+        src={`${SITE.base}logo-marmiertp.svg`}
+        alt="Marmier TP"
+        class="h-8 w-auto"
+      />
+      <span class="font-semibold tracking-wide">Marmier TP</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a href={`${SITE.base}#services`} class="hover:text-accent">Activités</a>
+      <a href={`${SITE.base}#about`} class="hover:text-accent">À propos</a>
+      <a href={`${SITE.base}#galerie`} class="hover:text-accent">Réalisations</a
+      >
+      <a href={`${SITE.base}contact`} class="btn">Demander un devis</a>
+    </nav>
+    <button
+      class="md:hidden p-2"
+      aria-label="Ouvrir le menu"
+      onclick="window.toggleMenu?.()"
+    >
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"><path d="M3 6h18M3 12h18M3 18h18"></path></svg
+      >
+    </button>
+  </div>
+  <div
+    id="mobile-nav"
+    class="md:hidden fixed inset-x-0 top-0 bg-background/95 backdrop-blur hidden"
+  >
+    <div class="container py-6 space-y-4">
+      <a
+        href={`${SITE.base}#services`}
+        class="block"
+        onclick="window.toggleMenu()">Activités</a
+      >
+      <a href={`${SITE.base}#about`} class="block" onclick="window.toggleMenu()"
+        >À propos</a
+      >
+      <a
+        href={`${SITE.base}#galerie`}
+        class="block"
+        onclick="window.toggleMenu()">Réalisations</a
+      >
+      <a href={`${SITE.base}contact`} class="btn" onclick="window.toggleMenu()"
+        >Demander un devis</a
+      >
+    </div>
+  </div>
+  <script>
+    const header = document.getElementById("site-header");
+    const mobile = document.getElementById("mobile-nav");
+    const onScroll = () =>
+      header.classList.toggle("sticky-bg", window.scrollY > 8);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    window.toggleMenu = () => {
+      mobile.classList.toggle("hidden");
+    };
+  </script>
+</header>
