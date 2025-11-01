@@ -41,3 +41,8 @@ header.sticky-bg {
 a.btn {
   @apply inline-flex items-center gap-2 px-5 py-3 rounded-full border border-accent text-foreground hover:bg-accent hover:text-background transition;
 }
+
+.diagonal-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% calc(100% - 4vw));
+}
+
