@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yblondeau.github.io/mtp-web/sitemap-index.xml
