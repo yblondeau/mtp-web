@@ -3,10 +3,14 @@
     "version": "1.0.0",
     "private": true,
     "type": "module",
+    "engines": {
+        "node": "20.x"
+    },
     "scripts": {
         "dev": "astro dev",
         "build": "astro build",
-        "preview": "astro preview"
+        "preview": "astro preview",
+        "check": "astro check"
     },
     "dependencies": {
         "@astrojs/sitemap": "^3.1.2",
@@ -15,6 +19,7 @@
         "clsx": "^2.1.1"
     },
     "devDependencies": {
+        "@astrojs/check": "^0.9.10",
         "autoprefixer": "^10.4.20",
         "postcss": "^8.4.49",
         "tailwindcss": "^3.4.14",
