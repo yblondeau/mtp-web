@@ -7,12 +7,11 @@ import { ACTIVITIES } from '../lib/constants';
 {ACTIVITIES.map((a, i) => {
   const imageLeft = i % 2 === 0;
   const bottomClass = i % 2 === 0 ? 'diag-bottom-a' : 'diag-bottom-b';
-  const altBg = `service-alt-${i % 2}`; // used for debugging only
   const topClass = (i - 1) % 2 === 0 ? 'diag-top-a' : 'diag-top-b';
   const imgDiag = i % 2 === 0 ? 'img-diag-bottom-a' : 'img-diag-bottom-b';
 
   return (
-    <section class={`service-row ${altBg}`}>
+    <section class="service-row">
       <div class={"overflow-hidden"}>
         <div class={`service-shell ${topClass}`}>
           <div class={`service-inner ${bottomClass}`}>
