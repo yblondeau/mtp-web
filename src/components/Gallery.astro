@@ -1,9 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import chantier1 from "../assets/images/chantier-1.jpg";
-import chantier2 from "../assets/images/chantier-2.jpg";
-import chantier3 from "../assets/images/chantier-3.jpg";
-import chantier4 from "../assets/images/chantier-4.jpg";
+import { GALLERY_IMAGES } from "../lib/constants";
 ---
 
 <section id="galerie" class="py-20 md:py-28">
@@ -17,34 +14,15 @@ import chantier4 from "../assets/images/chantier-4.jpg";
       </p>
     </header>
     <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3" data-reveal>
-      <Image
-        src={chantier1}
-        alt="Ouvrier en équipement de sécurité sur un chantier, à proximité d'une pelle mécanique"
-        width={640}
-        class="rounded-xl border border-white/10"
-        loading="lazy"
-      />
-      <Image
-        src={chantier2}
-        alt="Godet d'engin de chantier près d'un trottoir en béton en cours de réfection"
-        width={640}
-        class="rounded-xl border border-white/10"
-        loading="lazy"
-      />
-      <Image
-        src={chantier3}
-        alt="Plan technique de détail annoté au feutre par un professionnel"
-        width={640}
-        class="rounded-xl border border-white/10"
-        loading="lazy"
-      />
-      <Image
-        src={chantier4}
-        alt="Tarière hydraulique de forage en action sur un chantier de terrassement"
-        width={640}
-        class="rounded-xl border border-white/10"
-        loading="lazy"
-      />
+      {GALLERY_IMAGES.map((photo) => (
+        <Image
+          src={photo.src}
+          alt={photo.alt}
+          width={640}
+          class="rounded-xl border border-white/10"
+          loading="lazy"
+        />
+      ))}
     </div>
   </div>
 </section>
