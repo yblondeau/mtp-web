@@ -10,14 +10,14 @@ import { SITE } from "../lib/constants";
         alt="Marmier TP"
         class="h-8 w-auto"
       />
-      <span class="font-semibold tracking-wide">Marmier TP</span>
+      <span class="font-display font-bold tracking-wide uppercase">Marmier TP</span>
     </a>
     <nav class="hidden md:flex items-center gap-6 text-sm">
       <a href={`${SITE.base}#services`} class="hover:text-accent">Activités</a>
       <a href={`${SITE.base}#about`} class="hover:text-accent">À propos</a>
       <a href={`${SITE.base}#galerie`} class="hover:text-accent">Réalisations</a
       >
-      <a href={`${SITE.base}contact`} class="btn">Demander un devis</a>
+      <a href={`${SITE.base}contact`} class="btn-solid">Demander un devis</a>
     </nav>
     <button
       id="menu-toggle"
@@ -54,7 +54,7 @@ import { SITE } from "../lib/constants";
         class="block"
         onclick="window.toggleMenu()">Réalisations</a
       >
-      <a href={`${SITE.base}contact`} class="btn" onclick="window.toggleMenu()"
+      <a href={`${SITE.base}contact`} class="btn-solid" onclick="window.toggleMenu()"
         >Demander un devis</a
       >
     </div>

@@ -1,0 +1,18 @@
+---
+// Signature element: a dashed yellow centerline that threads the page's diagonal
+// crossings and draws itself in as the page is scrolled (see lib/animations.ts).
+---
+
+<div id="road-line" class="road-line" aria-hidden="true">
+  <svg viewBox="0 0 100 1000" preserveAspectRatio="none">
+    <defs>
+      <clipPath id="road-reveal">
+        <rect id="road-reveal-rect" x="-10" y="0" width="120" height="0" />
+      </clipPath>
+    </defs>
+    <path
+      d="M50,0 L50,60 L20,140 L20,260 L80,340 L80,460 L20,540 L20,660 L80,740 L80,860 L50,940 L50,1000"
+      clip-path="url(#road-reveal)"
+    ></path>
+  </svg>
+</div>

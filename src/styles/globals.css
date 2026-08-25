@@ -6,6 +6,10 @@
   color-scheme: dark;
 }
 
+body {
+  font-family: "Public Sans", sans-serif;
+}
+
 /* Headings split-lines style reminiscent of marcetjardin.com */
 .split-lines {
   line-height: 0.95;
@@ -35,6 +39,43 @@ header.sticky-bg {
 
 a.btn {
   @apply inline-flex items-center gap-2 px-5 py-3 rounded-full border border-accent text-foreground hover:bg-accent hover:text-background transition;
+}
+
+a.btn-solid {
+  @apply inline-flex items-center gap-2 px-5 py-3 rounded-full border border-accent bg-accent text-background hover:bg-accent-dark hover:border-accent-dark transition;
+}
+
+/* Road centerline divider: reused at small scale to carry yellow through
+   sections that would otherwise have none. */
+.divider-road {
+  height: 1px;
+  border: none;
+  background-image: repeating-linear-gradient(
+    to right,
+    #f3b21f 0,
+    #f3b21f 14px,
+    transparent 14px,
+    transparent 26px
+  );
+  opacity: 0.7;
+}
+
+/* Barrier-tape accent: same two colors already in the palette, used sparingly */
+.hazard-stripe {
+  height: 6px;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #f3b21f 0,
+    #f3b21f 10px,
+    #0f1310 10px,
+    #0f1310 20px
+  );
+}
+
+.service-icon-badge {
+  @apply inline-flex items-center justify-center rounded-full border border-accent/50;
+  width: clamp(44px, 4.5vw, 56px);
+  height: clamp(44px, 4.5vw, 56px);
 }
 
 .diagonal-bottom {
@@ -75,5 +116,37 @@ a.btn {
   stroke: #f3b21f;
   fill: none;
   stroke-width: 1.8;
+}
+
+/* Signature road-line: a dashed centerline threading the page, drawn in on scroll */
+.road-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.road-line svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.road-line path {
+  fill: none;
+  stroke: #f3b21f;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 4 14;
+  opacity: 0.55;
+  vector-effect: non-scaling-stroke;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .road-line path {
+    transition: none;
+  }
 }
 

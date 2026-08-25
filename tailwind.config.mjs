@@ -10,8 +10,12 @@ export default {
         muted: "#c9c7bf",
         accent: {
           DEFAULT: "#f3b21f",
-          dark: "#f3b21f",
+          dark: "#c9860f",
         },
+      },
+      fontFamily: {
+        display: ['"Big Shoulders"', "sans-serif"],
+        body: ['"Public Sans"', "sans-serif"],
       },
       container: {
         center: true,

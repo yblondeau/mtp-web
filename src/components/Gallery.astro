@@ -3,10 +3,11 @@ import { Image } from "astro:assets";
 import { GALLERY_IMAGES } from "../lib/constants";
 ---
 
+<hr class="divider-road" />
 <section id="galerie" class="py-20 md:py-28">
   <div class="container">
     <header>
-      <h2 class="text-3xl md:text-5xl font-bold split-lines" data-reveal>
+      <h2 class="font-display text-4xl md:text-6xl font-bold split-lines uppercase" data-reveal>
         Réalisations
       </h2>
       <p class="mt-4 text-muted" data-reveal>
@@ -19,7 +20,7 @@ import { GALLERY_IMAGES } from "../lib/constants";
           src={photo.src}
           alt={photo.alt}
           width={640}
-          class="rounded-xl border border-white/10"
+          class="rounded-xl border border-white/10 hover:border-accent transition-colors"
           loading="lazy"
         />
       ))}

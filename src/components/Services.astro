@@ -30,14 +30,16 @@ import { ACTIVITIES } from '../lib/constants';
               {/* Bloc texte (1/2) */}
               <div class={`${imageLeft ? '' : 'md:order-1'} flex items-center justify-center`}>
                 <div class="service-card max-w-xl" data-reveal>
-                  <h3 class="text-2xl md:text-3xl font-semibold">{a.title}</h3>
+                  <h3 class="font-display text-3xl md:text-4xl font-semibold uppercase">{a.title}</h3>
                   <p class="mt-4 opacity-80">{a.desc}</p>
 
                   {a.subs && a.subs.length > 0 && (
                     <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {a.subs.map((s) => (
                         <li class="flex flex-col items-center justify-start gap-2">
-                          <Icon name={s} />
+                          <span class="service-icon-badge">
+                            <Icon name={s} />
+                          </span>
                           <span class="text-sm md:text-base">{s}</span>
                         </li>
                       ))}

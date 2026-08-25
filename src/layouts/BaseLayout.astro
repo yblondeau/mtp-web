@@ -2,6 +2,7 @@
 import "../styles/globals.css";
 import { SITE } from "../lib/constants";
 import Footer from "../components/Footer.astro";
+import RoadLine from "../components/RoadLine.astro";
 import { getImage } from "astro:assets";
 import asphaltTexture from "../assets/images/asphalt-texture.png";
 import heroImage from "../assets/images/hero.jpg";
@@ -30,6 +31,13 @@ const ogImageURL = new URL(ogImage.src, Astro.site);
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" href={`${SITE.base}favicon.svg`} />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:site_name" content={SITE.name} />
@@ -45,14 +53,15 @@ const ogImageURL = new URL(ogImage.src, Astro.site);
     <style is:global>
       html, body {
         background-color: #0f1310;
-        background-image: var(--bg-texture);
-        background-size: 512px 512px;
-        background-repeat: repeat;
-        background-attachment: fixed;
+        background-image: linear-gradient(rgba(15, 19, 16, 0.55), rgba(15, 19, 16, 0.55)), var(--bg-texture);
+        background-size: cover, 512px 512px;
+        background-repeat: no-repeat, repeat;
+        background-attachment: fixed, fixed;
       }
     </style>
   </head>
   <body class="text-foreground antialiased">
+    <RoadLine />
     <slot />
     <Footer />
   </body>

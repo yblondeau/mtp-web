@@ -47,6 +47,14 @@ export const ACTIVITIES = [
   },
 ];
 
+// TODO: confirm real figures with the client before shipping — these are placeholders.
+export const STATS = [
+  { value: "15+", label: "ans d'expérience" },
+  { value: "300+", label: "chantiers réalisés" },
+  { value: "100%", label: "matériaux valorisés" },
+  { value: "48h", label: "délai de réponse devis" },
+];
+
 export const GALLERY_IMAGES = [
   {
     src: galleryTerrasse1,
