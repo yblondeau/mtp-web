@@ -20,8 +20,11 @@ import { SITE } from "../lib/constants";
       <a href={`${SITE.base}contact`} class="btn">Demander un devis</a>
     </nav>
     <button
+      id="menu-toggle"
       class="md:hidden p-2"
       aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
       onclick="window.toggleMenu?.()"
     >
       <svg
@@ -57,14 +60,23 @@ import { SITE } from "../lib/constants";
     </div>
   </div>
   <script>
+    declare global {
+      interface Window {
+        toggleMenu: () => void;
+      }
+    }
+
     const header = document.getElementById("site-header");
     const mobile = document.getElementById("mobile-nav");
     const onScroll = () =>
-      header.classList.toggle("sticky-bg", window.scrollY > 8);
+      header?.classList.toggle("sticky-bg", window.scrollY > 8);
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     window.toggleMenu = () => {
-      mobile.classList.toggle("hidden");
+      const isHidden = mobile?.classList.toggle("hidden");
+      document
+        .getElementById("menu-toggle")
+        ?.setAttribute("aria-expanded", String(!isHidden));
     };
   </script>
 </header>
