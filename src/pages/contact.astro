@@ -10,15 +10,16 @@ import Header from "../components/Header.astro";
       <h1 class="text-4xl md:text-5xl font-bold split-lines">Contact</h1>
       <p class="mt-4 text-muted">Dites-nous en plus sur votre projet.</p>
       <form
-        name="contact"
+        action="https://api.web3forms.com/submit"
         method="POST"
-        data-netlify="true"
         class="mt-8 grid gap-4"
       >
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+        <input type="hidden" name="subject" value="Nouveau message — site Marmier TP" />
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
         <input
           class="px-4 py-3 rounded-xl bg-white/5 border border-white/10"
-          name="nom"
+          name="name"
           placeholder="Nom"
           required
         />
