@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { SITE } from "../lib/constants";
+import heroImage from "../assets/images/hero.jpg";
 ---
 
 <section class="relative isolate pt-24 md:pt-32 overflow-hidden text-center">
@@ -7,10 +9,12 @@ import { SITE } from "../lib/constants";
     /* `isolate` crée un contexte d'empilement pour que le -z-10 ne passe pas derrière le body */
   }
   <div class="absolute inset-0 -z-10 parallax diagonal-bottom" data-parallax data-speed="0.18">
-    <img
-      src={`${SITE.base}images/hero.jpg`}
+    <Image
+      src={heroImage}
       alt="Chantier TP"
       class="w-full h-full object-cover opacity-70"
+      loading="eager"
+      fetchpriority="high"
     />
   </div>
   <div class="container min-h-[80vh] flex flex-col justify-center items-center relative z-10 text-center">

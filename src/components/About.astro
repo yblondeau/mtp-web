@@ -1,5 +1,6 @@
 ---
-import { SITE } from "../lib/constants";
+import { Image } from "astro:assets";
+import robinPhoto from "../assets/images/robin-marmier.jpg";
 ---
 
 <section id="about" class="py-20 md:py-28 border-t border-white/10">
@@ -30,8 +31,8 @@ import { SITE } from "../lib/constants";
       <div
         class="aspect-[4/3] rounded-3xl overflow-hidden border border-white/10"
       >
-        <img
-          src={`${SITE.base}/images/robin-marmier.jpg`}
+        <Image
+          src={robinPhoto}
           alt="Robin Marmier, gérant de l'entreprise Marmier TP"
           class="w-full h-full object-cover"
           loading="lazy"

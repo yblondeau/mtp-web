@@ -1,6 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
-import { ACTIVITIES, SITE } from '../lib/constants';
+import { ACTIVITIES } from '../lib/constants';
 ---
 
 {ACTIVITIES.map((a, i) => {
@@ -19,9 +20,10 @@ import { ACTIVITIES, SITE } from '../lib/constants';
               {/* Bloc image (1/2) */}
               <div class={`${imageLeft ? '' : 'md:order-2'}`}>
                 <div class={`h-full min-h-[340px] md:min-h-[420px] ${imgDiag}`}>
-                  <img
+                  <Image
                     src={a.img}
                     alt={a.title}
+                    width={900}
                     class="w-full h-full object-cover"
                     loading="lazy" />
                 </div>

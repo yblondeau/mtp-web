@@ -1,10 +1,19 @@
 ---
 import "../styles/globals.css";
 import { SITE } from "../lib/constants";
+import Footer from "../components/Footer.astro";
+import { getImage } from "astro:assets";
+import asphaltTexture from "../assets/images/asphalt-texture.png";
+
 const { title = SITE.name, description = SITE.description } = Astro.props;
+const bgTexture = await getImage({
+  src: asphaltTexture,
+  format: "webp",
+  quality: 60,
+});
 ---
 
-<html lang="fr">
+<html lang="fr" style={`--bg-texture:url(${bgTexture.src})`}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,7 +23,7 @@ const { title = SITE.name, description = SITE.description } = Astro.props;
     <style is:global>
       html, body {
         background-color: #0f1310;
-        background-image: url("images/asphalt-texture.png");
+        background-image: var(--bg-texture);
         background-size: 512px 512px;
         background-repeat: repeat;
         background-attachment: fixed;
@@ -23,5 +32,6 @@ const { title = SITE.name, description = SITE.description } = Astro.props;
   </head>
   <body class="text-foreground antialiased">
     <slot />
+    <Footer />
   </body>
 </html>
